@@ -10,39 +10,125 @@ body {
   display: grid;
   grid-template: 
     "header header" 2.5em
-    "hero editor" auto
+    "sidebar editor" auto
     "sidebar output" auto
-    "footer footer" 10em
+    "footer footer" 3em
     / 1fr 3fr;
+  background: #2A0134;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+}
+
+.header,
+.hero,
+.editor,
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
   grid-area: header;
+  background: #FF0789;
+  color: white;
+}
+.hero-title {
+  font-family: 'Concert One', cursive;
+  color: white;
+  font-size: 3rem;
 }
 
-.hero {
-  grid-area: hero;
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: sidebar;
+  background: #7E4071;
+  color: white;
 }
 
 .editor {
   grid-area: editor;
 }
 
+#runBtn {
+  cursor: pointer;
+  margin: 1rem;
+  font-size: 2rem;
+  font-family: 'Concert One', cursive;
+  background: transparent;
+  border: none;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+#runBtn::after {
+  content: "";
+  position: absolute;
+  background: #FF0789;
+  height: 1rem;
+  width: 38%;
+  left: 0;
+  top: 50%;
+  z-index: -1;
+  transform-origin: bottom left;
+  transition: transform 250ms cubic-bezier(1,-0.55,.41,1.72);
+}
+
+#runBtn:hover::after,
+#runBtn:focus::after {
+  transform: scale(2.75, 2);
+  transform-origin: bottom left;
+  transition: transform 250ms;
+}
+
 .output {
   grid-area: output;
+  display: flex;
+  align-self: center;
+  justify-self: center;
 }
 
 footer {
   grid-area: footer;
+  background: #FF0789;
+  padding: 1rem;
 }
 
+footer > a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  margin: 1rem;
+}
 
+footer > a:hover {
+  color: #7E4071;
+}
 
-#sourceTA {
+footer > a::after {
+  content: url(GitHub-Mark-Light-32px.png);
+  width: 100%;
+  height: 100%;
+}
+
+#markdown-it {
   display: block;
+  border-radius: 1rem;
+  width: 80%;
+  height: 80%;
+  padding: 1rem;
 }
 #targetDiv {
-border: 1px dashed #333333;
-width: 600px;
-height: 400px;
+  display: block;
+  border-radius: 1rem;
+  border: 1px solid #333333;
+  background-color:white;
+  width: 80%;
+  height: 80%;
+  padding: 1rem;
 }

@@ -1,5 +1,3 @@
-
-
 function markdownChange() {
   let text = document.getElementById('markdown-it').value,
       target = document.getElementById('targetDiv'),
