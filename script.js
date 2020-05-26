@@ -7,7 +7,6 @@ function markdownChange() {
     target.innerHTML = html;
 }
 
-
 function eraseText() {
   document.getElementById('markdown-it').value = "";
   document.getElementById('targetDiv').innerHTML ="";

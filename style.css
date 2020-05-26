@@ -87,6 +87,7 @@ p {
   color: white;
   z-index: 2;
   position: relative;
+  display: inline-block;
 }
 
 #runBtn::after {
